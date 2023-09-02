@@ -1,0 +1,163 @@
+body {
+  background-color: rgb(38, 38, 38);
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+.Heading
+{
+    position: absolute;
+    right: 220px;
+    top:15px;
+    width: 1000px;
+    height:80px;
+    background-color:rgb(60, 20, 84);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    line-height: 80px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+
+.bada-dabba {
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  /* background-color: rgb(28, 6, 40); */
+  right: 200px;
+  bottom: 0;
+  margin: 20px;
+  background-image: linear-gradient(rgb(51, 7, 60), rgb(2, 4, 40));
+}
+
+#ChatContainer {
+  position: absolute;
+  height: 500px;
+  width: 950px;
+  right: 25px;
+  bottom: 75px;
+  color: rgb(255, 255, 255);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+#text-input-box-background {
+  position: absolute;
+  width: 1000px;
+  height: 65px;
+  background-color:rgb(60, 20, 84);
+  bottom: 0px;
+  border-radius: 0px 0px 20px 20;
+}
+
+.TextBoxInput {
+  position: absolute;
+  width: 900px;
+  height: 40px;
+  bottom: 10px;
+  right: 50px;
+  border-radius: 20px;
+  border: 0;
+}
+
+.HelpBox
+{
+  position:absolute;
+  left:10px;
+  bottom: 15px;
+  width: 270px;
+  height: 40px;
+  background-color: rgb(128, 72, 128);
+  color: black;
+  font-size: large;
+  padding: 10px;
+  border-radius: 20px;
+
+}
+
+.BotMessage  {
+  clear: both;
+  align-self: flex-start;
+  padding: 10px;
+  line-height: 30px;
+  background-color: rgb(167, 116, 177);
+  color: black;
+  border-radius: 20px;
+  font-size: larger;
+  max-width: 50%;
+  word-wrap: inherit;
+  float: left;
+  margin: 4px;
+
+}
+
+.UserMessage  
+{
+  /* display: inline-block; */
+  padding: 10px;
+  line-height: 30px;
+  background-color: rgb(236, 171, 250);
+  color: black;
+  border-radius: 15px;
+  font-size: larger;
+  max-width: 40%; 
+  word-wrap: break-word;
+  float: right;
+  margin : 4px;
+}
+
+
+div.Container div:last-child
+{
+  animation: floatup 0.5s forwards;
+}
+
+.image
+{
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(167, 116, 177);
+  width:fit-content
+}
+
+table, th, td
+{
+
+  max-width: 700px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  font-size:large;
+
+} 
+
+.table 
+{
+  width: fit-content;
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgb(167, 116, 177);
+  border-radius: 10px;
+  color : black
+}
+
+@keyframes floatup {
+  from {
+      transform: translateY(15px);
+      opacity: 0  ;
+  }
+  to {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}
