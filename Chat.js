@@ -24,7 +24,7 @@ function GetUserMessage()
 
     document.getElementById("ChatContainer").innerHTML+=UserMessageText;
 
-    var chatHistory = document.getElementById('ChatContainer');
+    chatHistory = document.getElementById('ChatContainer');
     chatHistory.scrollTop = chatHistory.scrollHeight  ;
 
 
@@ -33,6 +33,7 @@ function GetUserMessage()
 KEYS=[]
 function GetBotResponse()
 {
+    PrevScrollHeight = chatHistory.scrollHeight
     BotResponseText = ""
     console.log(InputText)
     if (KEYS.includes("BotQues")) 
@@ -66,6 +67,7 @@ function GetBotResponse()
         BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
         document.getElementById("ChatContainer").innerHTML += BotResponseText;
         BotResponseText = ""
+        chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
         return
     }
 
@@ -107,8 +109,7 @@ function GetBotResponse()
 
     document.getElementById("ChatContainer").innerHTML += BotResponseText;
 
-    window.scrollBy(0,0);
-
+    chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
 }
 
 
