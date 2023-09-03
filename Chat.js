@@ -33,6 +33,8 @@ function GetUserMessage()
 KEYS=[]
 function GetBotResponse()
 {
+    BotResponseText = ""
+    console.log(InputText)
     if (KEYS.includes("BotQues")) 
     {
         if (Yes.includes(InputText))
@@ -56,12 +58,14 @@ function GetBotResponse()
             return
         }
     }
+    
 
     if (InputText == "view questions")
     {
         BotReply = QuesList()
         BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
         document.getElementById("ChatContainer").innerHTML += BotResponseText;
+        BotResponseText = ""
         return
     }
 
@@ -82,7 +86,7 @@ function GetBotResponse()
 
     if (KEYS.includes("video"))
     {
-        BotResponseText += "<div class='image'><video  width='75%' controls source src='" + BotReply.video + "' type='video'></video></div>"
+        BotResponseText += '<div class="image"><video  width="60%" controls source src="' + BotReply.video + '" type="video"></video></div>'
     }
 
     if (KEYS.includes("table"))
@@ -105,8 +109,6 @@ function GetBotResponse()
 
     window.scrollBy(0,0);
 
-    // var chatHistory = document.getElementById('ChatContainer');
-    // chatHistory.scrollTop = chatHistory.scrollHeight;
 }
 
 
