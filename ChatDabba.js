@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
     if (document.getElementById("UserTextInput")==null) {
         console.log("iss da null")
@@ -55,11 +57,18 @@ function GetBotResponse()
         }
     }
 
+    if (InputText == "view questions")
+    {
+        BotReply = QuesList()
+        BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
+        document.getElementById("ChatContainer").innerHTML += BotResponseText;
+        return
+    }
+
     BotReply = BotResponse(InputText)
     KEYS = Object.keys(BotReply)
     console.log(KEYS)
 
-    BotResponseText = ""
 
     if (KEYS.includes("answer"))
     {
@@ -68,12 +77,12 @@ function GetBotResponse()
 
     if (KEYS.includes("image"))
     {
-        BotResponseText +=  "<div class='image'> <img src='"+ BotReply.image + "' width='470px'></div>"
+        BotResponseText +=  "<div class='image'> <img src='"+ BotReply.image + "' width='90%' padding:5%></div>"
     }
 
     if (KEYS.includes("video"))
     {
-        BotResponseText += "<div class='image'><video  width='470px' controls source src='" + BotReply.video + "' type='video'></video></div>"
+        BotResponseText += "<div class='image'><video  width='75%' controls source src='" + BotReply.video + "' type='video'></video></div>"
     }
 
     if (KEYS.includes("table"))
