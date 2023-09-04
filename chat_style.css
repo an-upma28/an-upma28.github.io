@@ -80,16 +80,21 @@ h2 {
 .HelpBox
 {
   position:absolute;
-  left:10px;
-  bottom: 15px;
-  width: 270px;
-  height: 40px;
+  left:0.5%;
+  bottom: 2%;
+  width: 17%;
+  height: 6%;
   background-color: rgb(128, 72, 128);
   color: black;
-  font-size: large;
-  padding: 10px;
+  font-size: 120%;
+  padding: 0.7%;
   border-radius: 20px;
+}
 
+#question-button
+{
+  background-color: rgb(131, 87, 161);
+  border-radius: 10px;
 }
 
 .BotMessage  {

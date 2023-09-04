@@ -70,7 +70,7 @@ function GetBotResponse()
             }
             if (BotReply.BotQues[1] == "video")
             {
-                BotResponseText = '<div class="image"><video  width="470px" controls source src="' + BotReply.BotQues[2] + "' type='video'></video></div>"
+                BotResponseText = '<div class="image"><video  width="95%" controls source src="' + BotReply.BotQues[2] + '" type="video"></video></div>'
                 document.getElementById("ChatContainer").innerHTML += BotResponseText;
                 scroll()
                 return
@@ -123,7 +123,8 @@ function GetBotResponse()
 
     if (KEYS.includes("video"))
     {
-        BotResponseText += '<div class="image"><video  width="60%" controls> <source src=".' + BotReply.video + '" type="video"></video></div>'
+        BotResponseText += '<div class="image"><video  width="95%" controls source src="' + BotReply.video + '" type="video"></video></div>'
+       
     }
 
     if (KEYS.includes("BotQues"))
