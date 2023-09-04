@@ -22,19 +22,20 @@
                     <p class="BotMessage">How can I help you today?</p>
                 </div>
 
-                
-
+              
 
             </div>
             <div id="text-input-box-background">
                 <div>
-                    <input type="text" name="UserTextInputName" class="TextBoxInput" id="UserTextInput" placeholder="Enter text here">
+                    <input type="text" name="UserTextInputName" class="TextBoxInput" id="UserTextInput" placeholder="Enter your question here">
                 </div>
+                <button type="button" id="clear-button" onclick="clearchat()">Clear Chat</button>
             </div>
         </div>
 
         <div class="HelpBox">
-            Enter "view questions" to display the list of question  
+            Enter "view questions" to display the list of question or 
+            <button type="button" style="background-color: rgb(197, 115, 237);" onclick="PrintQuestion()">Click Me!</button> 
         </div>
     </body>
 

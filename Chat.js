@@ -1,5 +1,3 @@
-
-
 window.onload = function() {
     if (document.getElementById("UserTextInput")==null) {
         console.log("iss da null")
@@ -30,6 +28,32 @@ function GetUserMessage()
 
 }
 
+function scroll()
+{
+    chatHistory = document.getElementById('ChatContainer');
+        var PrevScrollHeight = chatHistory.scrollHeight
+        console.log(PrevScrollHeight)
+        chatHistory.scrollTop = PrevScrollHeight 
+}
+
+function clearchat()
+{
+    console.log("Retriveed old chat")
+
+    document.getElementById("ChatContainer").innerHTML = ""
+}
+
+function PrintQuestion()
+{
+    BotReply = QuesList()
+        BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
+        document.getElementById("ChatContainer").innerHTML += BotResponseText;
+        BotResponseText = ""
+        scroll()
+}
+
+
+
 KEYS=[]
 function GetBotResponse()
 {
@@ -46,8 +70,9 @@ function GetBotResponse()
             }
             if (BotReply.BotQues[1] == "video")
             {
-                BotResponseText = '<div class="image"><video  width="470px" controls source src=' + BotReply.BotQues[2] + "' type='video'></video></div>"
+                BotResponseText = '<div class="image"><video  width="470px" controls source src="' + BotReply.BotQues[2] + "' type='video'></video></div>"
                 document.getElementById("ChatContainer").innerHTML += BotResponseText;
+                scroll()
                 return
             }
         }
@@ -56,6 +81,7 @@ function GetBotResponse()
         {
             BotResponseText = '<div><p class="BotMessage">' + 'Alright! I hope that was clear. Is there anything else i can help you with?' + '</p></div>'
             document.getElementById("ChatContainer").innerHTML += BotResponseText;
+            scroll()
             return
         }
     }
@@ -63,11 +89,8 @@ function GetBotResponse()
 
     if (InputText == "view questions")
     {
-        BotReply = QuesList()
-        BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
-        document.getElementById("ChatContainer").innerHTML += BotResponseText;
-        BotResponseText = ""
-        chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
+        PrintQuestion()
+        scroll()
         return
     }
 
@@ -86,10 +109,6 @@ function GetBotResponse()
         BotResponseText +=  "<div class='image'> <img src='"+ BotReply.image + "' width='90%' padding:5%></div>"
     }
 
-    if (KEYS.includes("video"))
-    {
-        BotResponseText += '<div class="image"><video  width="60%" controls source src="' + BotReply.video + '" type="video"></video></div>'
-    }
 
     if (KEYS.includes("table"))
     {
@@ -102,14 +121,20 @@ function GetBotResponse()
         BotResponseText += "<table> <div class='table' >"
     }
 
+    if (KEYS.includes("video"))
+    {
+        BotResponseText += '<div class="image"><video  width="60%" controls> <source src=".' + BotReply.video + '" type="video"></video></div>'
+    }
+
     if (KEYS.includes("BotQues"))
     {
         BotResponseText += '<div><p class="BotMessage">' + BotReply.BotQues[0] + '</p></div>'
     }
 
     document.getElementById("ChatContainer").innerHTML += BotResponseText;
+    scroll()
 
-    chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
+    // chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
 }
 
 

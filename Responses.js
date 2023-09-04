@@ -4,6 +4,11 @@ function BotResponse(Input)
 {
     Input = Input.toLowerCase()
     console.log(Input)
+
+    if (starterQuestions.includes(Input))
+    {
+        return {answer:"Hello! How can i help you?"}
+    }
     index = 0
     while (index < json.questions.length)
     {
@@ -21,6 +26,7 @@ function BotResponse(Input)
 
 Yes=["yes", "yeah", "ok", "sure","yea", "alright"]
 No= ["no","nah","nope"]
+starterQuestions = ["hi","hey","hello"]
 
 
 json = 
@@ -204,6 +210,7 @@ json =
             "answer" : "The various steps involved in photosynthesis are listed below: <br><b>Absorb Sunlight:</b> Plants take in sunlight through their leaves.<br><b>Take in Carbon Dioxide:</b> They also breathe in carbon dioxide from the air through tiny openings in their leaves.<br> <b>Make Oxygen:</b> Plants split water molecules to get oxygen, which they release into the air as a gas we breathe.<br><b>Create Food:</b> Using the energy from sunlight, plants turn carbon dioxide and water into a type of sugar called glucose. This sugar is their food.<br> <b>Store Energy:</b> Some of the glucose is stored for later, and some is used by the plant for energy.<br><br>So, in simple terms, photosynthesis is how plants use sunlight to make food and release oxygen into the air. It's like a plant's way of cooking its own meals using sunlight, air, and water."
         },
 
+    
         {
             "question" : "explain the parts of the digestive system",
             "answer" : "<b>Digestion</b> The digestive system breaks down food into nutrients such as carbohydrates, fats and proteins. They can then be absorbed into the bloodstream so the body can use them for energy, growth and repair.<br><br>The various <b>parts of digestive system</b> and their functions are listed below: <br>MOUTH - ingestion and digestion begins <br>SALIVARY GLANDS - contain amylase for the digestion of carbohydrates <br>OESOPHAGUS - moves food to the stomach from the mouth <br>STOMACH - digestion continues <br>Pancreas - produces enzymes for digestion <br> LIVER - produces bile <br>GALLBLADDER - Stores bile <br>SMALL INTESTINE - absorption of nutrients <br>LARGE INTESTINE - reabsorption of water and egestion",
