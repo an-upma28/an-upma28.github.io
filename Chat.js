@@ -24,32 +24,85 @@ function GetUserMessage()
 
     chatHistory = document.getElementById('ChatContainer');
     chatHistory.scrollTop = chatHistory.scrollHeight  ;
-
-
+    ChangeTheme()
+    ChangeTheme()
 }
 
 function scroll()
 {
-    chatHistory = document.getElementById('ChatContainer');
-        var PrevScrollHeight = chatHistory.scrollHeight
-        console.log(PrevScrollHeight)
-        chatHistory.scrollTop = PrevScrollHeight 
+    ChatContainer.scrollTop = PrevHeight - 100
 }
 
 function clearchat()
 {
-    console.log("Retriveed old chat")
-
     document.getElementById("ChatContainer").innerHTML = ""
 }
 
 function PrintQuestion()
 {
     BotReply = QuesList()
-        BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'
-        document.getElementById("ChatContainer").innerHTML += BotResponseText;
-        BotResponseText = ""
-        scroll()
+    ChatContainer = document.getElementById("ChatContainer");
+    PrevHeight = ChatContainer.scrollHeight
+    BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'        
+    document.getElementById("ChatContainer").innerHTML += BotResponseText
+    BotResponseText = ""
+    ChangeTheme()
+    ChangeTheme()
+    scroll()
+}
+
+let color = "p"
+function ChangeTheme()
+{
+    if (color == "p")
+    {
+
+        document.getElementById("chat-bg-box").style.backgroundImage="linear-gradient(rgb(0, 40, 53), rgb(6, 0, 58))";
+        document.getElementById("Heading").style.backgroundColor= "rgb(13, 15, 43)";
+        document.getElementById("text-input-box-background").style.backgroundColor= "rgb(13, 15, 43)";
+        // document.getElementsById("image").style.backgroundColor= "rgb(13, 15, 43)" ;
+        // document.getElementsById("table").style.backgroundColor= "rgb(13, 15, 43)" 
+
+        BotMessages = document.getElementsByClassName("BotMessage")
+        for (i=0; i<BotMessages.length; i++)
+        {
+            BotMessages[i].style.backgroundColor= "rgb(13, 15, 43)"
+        }
+
+        UserMessages = document.getElementsByClassName("UserMessage");
+        for (i=0; i<UserMessages.length; i++)
+        {
+            UserMessages[i].style.backgroundColor= "rgb(78, 129, 135)"
+        }
+
+        color = "b"
+        return
+    }
+    
+    if (color == "b")
+    {
+        document.getElementById("chat-bg-box").style.backgroundImage="linear-gradient(rgb(51, 7, 60), rgb(2, 4, 40))";
+        document.getElementById("Heading").style.backgroundColor= "rgb(60, 20, 84)";
+        document.getElementById("text-input-box-background").style.backgroundColor= "rgb(60, 20, 84)";
+        
+        BotMessages = document.getElementsByClassName("BotMessage")
+        for (i=0; i<BotMessages.length; i++)
+        {
+            BotMessages[i].style.backgroundColor= "rgb(167, 116, 177)"
+        }
+
+        UserMessages = document.getElementsByClassName("UserMessage");
+        for (i=0; i<UserMessages.length; i++)
+        {
+            UserMessages[i].style.backgroundColor= "rgb(174, 107, 195)"
+        }
+
+        color = "p"
+        return
+    }
+
+
+    
 }
 
 
@@ -57,9 +110,9 @@ function PrintQuestion()
 KEYS=[]
 function GetBotResponse()
 {
-    PrevScrollHeight = chatHistory.scrollHeight
+    ChatContainer = document.getElementById("ChatContainer");
+    PrevHeight = ChatContainer.scrollHeight
     BotResponseText = ""
-    console.log(InputText)
     if (KEYS.includes("BotQues")) 
     {
         if (Yes.includes(InputText))
@@ -96,7 +149,6 @@ function GetBotResponse()
 
     BotReply = BotResponse(InputText)
     KEYS = Object.keys(BotReply)
-    console.log(KEYS)
 
 
     if (KEYS.includes("answer"))
@@ -118,7 +170,7 @@ function GetBotResponse()
         {
             BotResponseText += "<tr><td>" + BotReply.table[0][index] + "</td> <td>" +  BotReply.table[1][index] + "</td></tr>"
         }
-        BotResponseText += "<table> <div class='table' >"
+        BotResponseText += "</table> </div >"
     }
 
     if (KEYS.includes("video"))
@@ -133,9 +185,9 @@ function GetBotResponse()
     }
 
     document.getElementById("ChatContainer").innerHTML += BotResponseText;
+    ChangeTheme()
+    ChangeTheme()
     scroll()
-
-    // chatHistory.scrollTop = PrevScrollHeight + 0.6 * chatHistory.scrollHeight
 }
 
 

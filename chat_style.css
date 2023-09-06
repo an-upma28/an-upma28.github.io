@@ -7,7 +7,7 @@ h2 {
   text-align: center;
 }
 
-.Heading
+#Heading
 {
   position: absolute;
   right: 15%;
@@ -15,6 +15,7 @@ h2 {
   width: 65%;
   height:10%;
   background-color:rgb(60, 20, 84);
+  /* background-color: rgb(13, 15, 43); */
   color: white;
   text-align: center;
   font-size: xx-large;
@@ -23,7 +24,7 @@ h2 {
 }
 
 
-.bada-dabba {
+#chat-bg-box {
   position: absolute;
   width: 65%;
   height: 87%;
@@ -31,7 +32,8 @@ h2 {
   right: 15%;
   top: 11.5%;
   /* margin: 20px; */
-  background-image: linear-gradient(rgb(51, 7, 60), rgb(2, 4, 40));
+  background-image: linear-gradient( rgb(51, 7, 60), rgb(2, 4, 40));
+  /* background-image : linear-gradient(rgb(0, 40, 53), rgb(6, 0, 58)) */
 }
 
 #ChatContainer {
@@ -53,6 +55,8 @@ h2 {
   width: 100%;
   height: 10%;
   background-color:rgb(60, 20, 84);
+  /* background-color: rgb(13, 15, 43); */
+
   bottom: 0px;
 }
 
@@ -102,7 +106,8 @@ h2 {
   align-self: flex-start;
   padding: 1.5%;
   line-height: 150%;
-  background-color: rgb(167, 116, 177);
+  /* background-color: rgb(167, 116, 177); */
+  /* background-color: rgb(99, 121, 165); */
   color: black;
   border-radius: 25px;
   font-size: larger;
@@ -113,12 +118,21 @@ h2 {
 
 }
 
+.BlueMessage {
+  background-color: rgb(78, 129, 135);
+}
+
+.PurpleMessage {
+  background-color: rgb(167, 116, 177);
+}
+
 .UserMessage  
 {
   /* display: inline-block; */
   padding: 1.5%;
   line-height: 150%;
-  background-color: rgb(236, 171, 250);
+  background-color: rgb(174, 107, 195);
+  /* background-color: rgb(78, 129, 135); */
   color: black;
   border-radius: 25px;
   font-size: larger;
@@ -162,8 +176,19 @@ table, th, td
   margin-bottom: 1%;
   padding: 2%;
   background-color: rgb(167, 116, 177);
-  border-radius: 10px;
+  border-radius: 25px;
   color : black
+}
+
+#themeChanger
+{
+  position: absolute;
+  right: 2%;
+  bottom : 2%;
+  width: 8%;
+  height: 5%;
+  background-color: rgb(145, 142, 142);
+  border-radius: 10px;
 }
 
 @keyframes floatup {

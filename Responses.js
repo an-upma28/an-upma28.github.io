@@ -3,8 +3,6 @@
 function BotResponse(Input)
 {
     Input = Input.toLowerCase()
-    console.log(Input)
-
     if (starterQuestions.includes(Input))
     {
         return {answer:"Hello! How can i help you?"}
@@ -20,7 +18,7 @@ function BotResponse(Input)
         index++
     }
   
-    return {answer : "Sorry I cannot answer that<br>Try asking something else!"}
+    return {answer : "Sorry I dont have an answer to that<br>Try checking for spelling errors or ask something else!"}
 
 }
 
@@ -112,7 +110,7 @@ json =
         {
             "question" : "what is daltons atomic theory",
             "answer" : "<b>Dalton's Atomic Theory</b><br> + The matter is composed of minute particles known as atoms.<br> + Atoms are indivisible particles that can't be destroyed or created through chemical reactions.<br> + All atoms of an element have identical chemical properties and mass whereas, atoms of different elements have different chemical properties and masses.<br> + Atoms combine in a ratio of small whole numbers to form molecules and compounds.",
-            "BotQues" : ["Would you like to know more about molecules?", "redirect", "molecules"]
+            "BotQues" : ["Would you like to know more about molecules?", "redirect", "what are molecules"]
         },
         {
             "question" : "what are molecules",

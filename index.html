@@ -3,23 +3,22 @@
     <head>
         <link href="chat_style.css" rel="stylesheet"/>
         <script src="Chat.js"></script>
-        <script src="Responses.js"></script>
-        
+        <script src="Responses.js"></script>       
     </head>
 
     <body>
-        <div class="Heading">
+        <div id="Heading">
             Educational ChatBot
         </div>
-        <div class="bada-dabba">
+        <div id="chat-bg-box">
             <div class= "Container" id="ChatContainer" name="ChatContainerName">
               
                 <div>
-                    <p class="BotMessage">Hi! I'm an Educational ChatBot and I can answer your questions about Physics, Chemistry & Biology</p>
+                    <p class="BotMessage PurpleMessage">Hi! I'm an Educational ChatBot and I can answer your questions about Physics, Chemistry & Biology</p>
                 </div>
 
                 <div>
-                    <p class="BotMessage">How can I help you today?</p>
+                    <p class="BotMessage PurpleMessage">How can I help you today?</p>
                 </div>
 
               
@@ -37,6 +36,8 @@
             Enter "view questions" to display the list of question or 
             <button type="button" id="question-button" onclick="PrintQuestion()"> Click Me!</button> 
         </div>
+
+        <button type="button" id="themeChanger" onclick= "ChangeTheme()"> Change Theme </button>
     </body>
 
 </html>
