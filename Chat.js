@@ -59,13 +59,13 @@ function ChangeTheme()
         document.getElementById("Heading").style.backgroundColor= "rgb(13, 15, 43)";
         document.getElementById("text-input-box-background").style.backgroundColor= "rgb(13, 15, 43)";
 
-        BotMessages = document.querySelectorAll(".BotMessage, .image, .table");
+        BotMessages = document.querySelectorAll(".BotPurpleMessage");
         for (i=0; i<BotMessages.length; i++){
             BotMessages[i].classList.remove("BotPurpleMessage")
             BotMessages[i].classList.add("BotBlueMessage")
         }
 
-        UserMessages = document.querySelectorAll(".UserMessage, .image, .table");
+        UserMessages = document.querySelectorAll(".UserPurpleMessage");
         for (i=0; i<UserMessages.length; i++){
             UserMessages[i].classList.remove("UserPurpleMessage")
             UserMessages[i].classList.add("UserBlueMessage")
@@ -84,14 +84,14 @@ function ChangeTheme()
         document.getElementById("Heading").style.backgroundColor= "rgb(60, 20, 84)";
         document.getElementById("text-input-box-background").style.backgroundColor= "rgb(60, 20, 84)";
         
-        BotMessages = document.querySelectorAll(".BotMessage, .image, .table")
+        BotMessages = document.querySelectorAll(".BotBlueMessage")
         for (i=0; i<BotMessages.length; i++)
         {
             BotMessages[i].classList.remove("BotBlueMessage")
             BotMessages[i].classList.add("BotPurpleMessage")
         }
 
-        UserMessages = document.querySelectorAll(".UserMessage, .image, .table")
+        UserMessages = document.querySelectorAll(".UserBlueMessage")
         for (i=0; i<UserMessages.length; i++)
         {
             UserMessages[i].classList.remove("UserBlueMessage")
@@ -101,9 +101,6 @@ function ChangeTheme()
         color = "p"
         return
     }
-
-
-    
 }
 
 
@@ -114,6 +111,7 @@ function GetBotResponse()
     ChatContainer = document.getElementById("ChatContainer");
     PrevHeight = ChatContainer.scrollHeight
     BotResponseText = ""
+   
     if (KEYS.includes("BotQues")) 
     {
         if (Yes.includes(InputText))

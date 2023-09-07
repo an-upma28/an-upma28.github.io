@@ -78,7 +78,6 @@ h2 {
   right: 2%;
   bottom: 20%;
   border-radius: 20px;
-
 }
 
 .HelpBox
@@ -88,7 +87,7 @@ h2 {
   bottom: 2%;
   width: 17%;
   height: 6%;
-  background-color: rgb(128, 72, 128);
+  /* background-color: rgb(128, 72, 128); */
   color: black;
   font-size: 120%;
   padding: 0.7%;
@@ -97,8 +96,9 @@ h2 {
 
 #question-button
 {
-  background-color: rgb(131, 87, 161);
+  /* background-color: rgb(107, 73, 171); */
   border-radius: 10px;
+  font-size: medium;
 }
 
 .BotMessage  {
