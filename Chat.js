@@ -1,7 +1,4 @@
 window.onload = function() {
-    if (document.getElementById("UserTextInput")==null) {
-        console.log("iss da null")
-    }
     
     document.getElementById("UserTextInput").addEventListener("keypress", function (event) {
         if (event.keyCode == 13) 
@@ -24,8 +21,6 @@ function GetUserMessage()
 
     chatHistory = document.getElementById('ChatContainer');
     chatHistory.scrollTop = chatHistory.scrollHeight  ;
-    ChangeTheme()
-    ChangeTheme()
 }
 
 function scroll()
@@ -129,7 +124,7 @@ function GetBotResponse()
             }
             if (BotReply.BotQues[1] == "video")
             {
-                BotResponseText = '<div class="image"><video  width="95%" controls source src="' + BotReply.BotQues[2] + '" type="video"></video></div>'
+                BotResponseText = '<div class="image ' + BotColor + '"><video  width="95%" controls source src="' + BotReply.BotQues[2] + '" type="video"></video></div>'
                 document.getElementById("ChatContainer").innerHTML += BotResponseText;
                 scroll()
                 return
@@ -138,7 +133,7 @@ function GetBotResponse()
 
         if (No.includes(InputText))
         {
-            BotResponseText = '<div><p class="BotMessage">' + 'Alright! I hope that was clear. Is there anything else i can help you with?' + '</p></div>'
+            BotResponseText = '<div><p class="BotMessage ' + BotColor + '">' + 'Alright! I hope that was clear. Is there anything else i can help you with?' + '</p></div>'
             document.getElementById("ChatContainer").innerHTML += BotResponseText;
             scroll()
             return

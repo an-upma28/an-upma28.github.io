@@ -23,7 +23,7 @@ function BotResponse(Input)
 }
 
 Yes=["yes", "yeah", "ok", "sure","yea", "alright"]
-No= ["no","nah","nope"]
+No= ["no","nah","nope", ]
 starterQuestions = ["hi","hey","hello"]
 
 
@@ -159,7 +159,7 @@ json =
 
         {
             "question" : "what are metals",
-            "answer" : "<b>METALS</b><br>Metals are substances that form naturally below the surface of the Earth. Most metals are lustrous or shiny. Metals are inorganic, which means they are made of substances that were never alive.Metal is very strong and durable and therefore is used to make many things. These are used for making automobiles, satellites, cooking utensils, etc. Most metals are hard but some are not. Sodium and potassium are such metals that can be cut by knife whereas mercury is a liquid metal at room temperature. Iron is solid in nature. </p><p class= 'BotMessage'>Would you like to know more about metals? (such as physical properties of metals, chemical properties of metals, differences between metals and non-metals) if yes, please enter your choice</p>"
+            "answer" : "<b>METALS</b><br>Metals are substances that form naturally below the surface of the Earth. Most metals are lustrous or shiny. Metals are inorganic, which means they are made of substances that were never alive.Metal is very strong and durable and therefore is used to make many things. These are used for making automobiles, satellites, cooking utensils, etc. Most metals are hard but some are not. Sodium and potassium are such metals that can be cut by knife whereas mercury is a liquid metal at room temperature. Iron is solid in nature. <br><br>Would you like to know more about metals? (such as physical properties of metals, chemical properties of metals, differences between metals and non-metals) if yes, please enter your choice</p>"
         },
 
         {
