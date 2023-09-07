@@ -18,8 +18,8 @@ function GetUserMessage()
     InputText = (document.getElementById("UserTextInput").value);
     document.getElementById("UserTextInput").value=""
 
-    UserMessageText = "<div><p class='UserMessage'><span>" + InputText + "</span></p></div>";
-
+    UserMessageText = "<div><p class='UserMessage " + UserColor+ "'><span>" + InputText + "</span></p></div>";
+    
     document.getElementById("ChatContainer").innerHTML+=UserMessageText;
 
     chatHistory = document.getElementById('ChatContainer');
@@ -43,36 +43,37 @@ function PrintQuestion()
     BotReply = QuesList()
     ChatContainer = document.getElementById("ChatContainer");
     PrevHeight = ChatContainer.scrollHeight
-    BotResponseText = '<div><p class="BotMessage">' + BotReply + '</p></div>'        
+    BotResponseText = '<div><p class="BotMessage ' + BotColor + '">' + BotReply + '</p></div>'        
     document.getElementById("ChatContainer").innerHTML += BotResponseText
     BotResponseText = ""
-    ChangeTheme()
-    ChangeTheme()
     scroll()
 }
 
 let color = "p"
+BotColor = "BotPurpleMessage"
+UserColor = "UserPurpleMessage"
+
 function ChangeTheme()
 {
     if (color == "p")
     {
+        BotColor = "BotBlueMessage"
+        UserColor = "UserBlueMessage"
 
         document.getElementById("chat-bg-box").style.backgroundImage="linear-gradient(rgb(0, 40, 53), rgb(6, 0, 58))";
         document.getElementById("Heading").style.backgroundColor= "rgb(13, 15, 43)";
         document.getElementById("text-input-box-background").style.backgroundColor= "rgb(13, 15, 43)";
-        // document.getElementsById("image").style.backgroundColor= "rgb(13, 15, 43)" ;
-        // document.getElementsById("table").style.backgroundColor= "rgb(13, 15, 43)" 
 
-        BotMessages = document.getElementsByClassName("BotMessage")
-        for (i=0; i<BotMessages.length; i++)
-        {
-            BotMessages[i].style.backgroundColor= "rgb(13, 15, 43)"
+        BotMessages = document.querySelectorAll(".BotMessage, .image, .table");
+        for (i=0; i<BotMessages.length; i++){
+            BotMessages[i].classList.remove("BotPurpleMessage")
+            BotMessages[i].classList.add("BotBlueMessage")
         }
 
-        UserMessages = document.getElementsByClassName("UserMessage");
-        for (i=0; i<UserMessages.length; i++)
-        {
-            UserMessages[i].style.backgroundColor= "rgb(78, 129, 135)"
+        UserMessages = document.querySelectorAll(".UserMessage, .image, .table");
+        for (i=0; i<UserMessages.length; i++){
+            UserMessages[i].classList.remove("UserPurpleMessage")
+            UserMessages[i].classList.add("UserBlueMessage")
         }
 
         color = "b"
@@ -81,20 +82,25 @@ function ChangeTheme()
     
     if (color == "b")
     {
+        BotColor = "BotPurpleMessage"
+        UserColor = "UserPurpleMessage"
+
         document.getElementById("chat-bg-box").style.backgroundImage="linear-gradient(rgb(51, 7, 60), rgb(2, 4, 40))";
         document.getElementById("Heading").style.backgroundColor= "rgb(60, 20, 84)";
         document.getElementById("text-input-box-background").style.backgroundColor= "rgb(60, 20, 84)";
         
-        BotMessages = document.getElementsByClassName("BotMessage")
+        BotMessages = document.querySelectorAll(".BotMessage, .image, .table")
         for (i=0; i<BotMessages.length; i++)
         {
-            BotMessages[i].style.backgroundColor= "rgb(167, 116, 177)"
+            BotMessages[i].classList.remove("BotBlueMessage")
+            BotMessages[i].classList.add("BotPurpleMessage")
         }
 
-        UserMessages = document.getElementsByClassName("UserMessage");
+        UserMessages = document.querySelectorAll(".UserMessage, .image, .table")
         for (i=0; i<UserMessages.length; i++)
         {
-            UserMessages[i].style.backgroundColor= "rgb(174, 107, 195)"
+            UserMessages[i].classList.remove("UserBlueMessage")
+            UserMessages[i].classList.add("UserPurpleMessage")
         }
 
         color = "p"
@@ -153,18 +159,18 @@ function GetBotResponse()
 
     if (KEYS.includes("answer"))
     {
-        BotResponseText += '<div><p class="BotMessage">' + BotReply.answer + '</p></div>'
+        BotResponseText += '<div><p class="BotMessage ' + BotColor + '">' + BotReply.answer + '</p></div>'
     }
 
     if (KEYS.includes("image"))
     {
-        BotResponseText +=  "<div class='image'> <img src='"+ BotReply.image + "' width='90%' padding:5%></div>"
+        BotResponseText +=  "<div class='image " + BotColor + "'> <img src='" + BotReply.image + "' width='90%' padding:5%></div>"
     }
 
 
     if (KEYS.includes("table"))
     {
-        BotResponseText += "<div class='table' > <table> <tr> <th style= 'width:50%'>";
+        BotResponseText += "<div class='table " + BotColor + "' > <table> <tr> <th style= 'width:50%'>";
         BotResponseText +=  BotReply.table[0][0] + "</th> <th>" + BotReply.table[1][0] + "</th> </tr>" ;
         for ( let index=1; index < BotReply.table[0].length; index++)
         {
@@ -175,18 +181,16 @@ function GetBotResponse()
 
     if (KEYS.includes("video"))
     {
-        BotResponseText += '<div class="image"><video  width="95%" controls source src="' + BotReply.video + '" type="video"></video></div>'
+        BotResponseText += '<div class="image ' + BotColor + '"><video  width="95%" controls source src="' + BotReply.video + '" type="video"></video></div>'
        
     }
 
     if (KEYS.includes("BotQues"))
     {
-        BotResponseText += '<div><p class="BotMessage">' + BotReply.BotQues[0] + '</p></div>'
+        BotResponseText += '<div><p class="BotMessage ' + BotColor + '">' + BotReply.BotQues[0] + '</p></div>'
     }
 
     document.getElementById("ChatContainer").innerHTML += BotResponseText;
-    ChangeTheme()
-    ChangeTheme()
     scroll()
 }
 

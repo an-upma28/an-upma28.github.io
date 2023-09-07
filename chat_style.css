@@ -106,8 +106,6 @@ h2 {
   align-self: flex-start;
   padding: 1.5%;
   line-height: 150%;
-  /* background-color: rgb(167, 116, 177); */
-  /* background-color: rgb(99, 121, 165); */
   color: black;
   border-radius: 25px;
   font-size: larger;
@@ -118,11 +116,22 @@ h2 {
 
 }
 
-.BlueMessage {
+.UserBlueMessage {
   background-color: rgb(78, 129, 135);
 }
 
-.PurpleMessage {
+.BotBlueMessage
+{
+  background-color: rgb(99, 121, 165);
+
+}
+
+.UserPurpleMessage{
+  background-color: rgb(132, 97, 139);
+
+}
+
+.BotPurpleMessage {
   background-color: rgb(167, 116, 177);
 }
 
@@ -131,8 +140,6 @@ h2 {
   /* display: inline-block; */
   padding: 1.5%;
   line-height: 150%;
-  background-color: rgb(174, 107, 195);
-  /* background-color: rgb(78, 129, 135); */
   color: black;
   border-radius: 25px;
   font-size: larger;
@@ -153,7 +160,6 @@ div.Container div:last-child
   margin: 0.5%;
   padding: 1.5%;
   border-radius: 10px;
-  background-color: rgb(167, 116, 177);
   width:fit-content;
   max-width:45%
 }
@@ -175,7 +181,6 @@ table, th, td
   margin: top 1%;;
   margin-bottom: 1%;
   padding: 2%;
-  background-color: rgb(167, 116, 177);
   border-radius: 25px;
   color : black
 }
